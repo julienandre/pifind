@@ -1,0 +1,33 @@
+{
+  "name": "pif",
+  "version": "1.0.0",
+  "description": "Raspberry Pi finder based on Apple Bonjour.",
+  "main": "app.js",
+  "bin": {
+    "pifind": "app.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julienandre/pifind.git"
+  },
+  "preferGlobal": true,
+  "keywords": [
+    "RPi",
+    "find",
+    "ip",
+    "bonjour"
+  ],
+  "dependencies": {
+    "commander": "2.9.0",
+    "mdns": "^2.3.3"
+  },
+  "author": "julien.andre@ariadnext.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julienandre/pifind/issues"
+  },
+  "homepage": "https://github.com/julienandre/pifind#readme"
+}
