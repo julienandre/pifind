@@ -1,5 +1,5 @@
 {
-  "name": "pif",
+  "name": "pifind",
   "version": "1.0.0",
   "description": "Raspberry Pi finder based on Apple Bonjour.",
   "main": "app.js",
