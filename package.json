@@ -15,8 +15,10 @@
   },
   "preferGlobal": true,
   "keywords": [
-    "RPi",
+    "raspberry",
+    "pi",
     "find",
+    "finder",
     "ip",
     "bonjour"
   ],
