@@ -12,13 +12,20 @@ var timeoutexit = 2000;
 program
   .version(pjson.version)
   .usage( '[options]' )
-  .option('-a, --all', 'test')
+  //.option('-a, --all', 'test')
   .parse(process.argv);
 
 
 
+// For Rpi Compat : https://github.com/agnat/node_mdns/issues/130
+var sequence = [
+  mdns.rst.DNSServiceResolve(),
+  'DNSServiceGetAddrInfo' in mdns.dns_sd ? mdns.rst.DNSServiceGetAddrInfo() : mdns.rst.getaddrinfo({families:[4]}),
+  mdns.rst.makeAddressesUnique()
+];
+
 // discover all available service types
-var browser = mdns.createBrowser(mdns.tcp('workstation')); // all_the_types is just another browser...
+var browser = mdns.createBrowser(mdns.tcp('workstation'), {resolverSequence: sequence}); // all_the_types is just another browser...
 browser.on('serviceUp', function(service) {
   var s = parse( service);
   if(s.mac.indexOf("b8:27:eb:") != -1 ){
